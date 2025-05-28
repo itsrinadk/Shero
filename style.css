@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #222;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+  }
+  
+  .promo-banner {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  header {
+    background: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-top,
+  .nav-left,
+  .nav-right,
+  .nav-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .nav-top {
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .nav-left a,
+  .nav-right a,
+  .nav-menu a {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-menu {
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .nav-menu a {
+    font-size: 15px;
+    position: relative;
+  }
+  
+  .nav-menu a::after {
+    content: '▼';
+    font-size: 10px;
+    margin-left: 5px;
+    color: black;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+  }
+  
+  .main-nav {
+    background: #f8f8f8;
+    padding: 15px 0;
+    box-shadow: inset 0 -1px 0 #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+  }
+  
+  .nav-menu.mobile-hidden {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: #f8f8f8;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 58px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  .hero {
+    background: url('https://media.istockphoto.com/id/1421660216/photo/craft-hobby-background-with-yarn-in-natural-colors.jpg?s=612x612&w=0&k=20&c=36bm6n0SYfbvwU0CZQVYwq_nKiGg1YvVe9xuhZBftgk=') center/cover no-repeat;
+    padding: 60px 0;
+    text-align: right;
+    color: white;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .featured {
+    padding: 60px 0;
+    flex-grow: 1;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .product-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+  }
+  
+  .product-info {
+    padding: 20px 0 0;
+    text-align: center;
+  }
+  
+  .product-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  /* Categories */
+  .categories {
+    padding: 60px 0;
+    background: #f8f8f8;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+  }
+  
+  .category-item {
+    flex: 0 0 33.3333%;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+  
+  .category-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+  }
+  
+  .category-title {
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+  }
+  
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    transition: background 0.3s ease;
+    z-index: 10;
+  }
+  
+  .carousel-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .carousel-button.prev {
+    left: 10px;
+  }
+  
+  .carousel-button.next {
+    right: 10px;
+  }
+  
+  footer {
+    background: #222;
+    color: #eee;
+    padding: 40px 15px;
+    font-size: 14px;
+    margin-top: auto;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+    text-align: left;
+  }
+  
+  .footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #eee;
+    margin-bottom: 15px;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+  }
+  
+  .footer-column h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  
+  .footer-column p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #bbb;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+  }
+  
+  .footer-column li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-column a {
+    color: #bbb;
+  }
+  
+  .footer-column a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .newsletter-signup input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .newsletter-signup button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .newsletter-signup button:hover {
+    background: #777;
+  }
+  
+  .copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    text-align: center;
+    color: #bbb;
+  }
+  
+  @media (max-width: 600px) {
+    .main-nav {
+      flex-wrap: wrap;
+      position: relative;
+    }
+  
+    .logo {
+      margin-bottom: 10px;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .nav-menu {
+      width: 100%;
+    }
+  
+    .nav-menu.mobile-hidden {
+      display: none;
+    }
+  
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .category-item {
+      flex: 0 0 100%;
+      padding: 0 5px;
+    }
+  
+    .category-item img {
+      height: 180px;
+    }
+  
+    .nav-top {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .nav-left,
+    .nav-right {
+      justify-content: center;
+    }
+  
+    .hero {
+      text-align: center;
+      padding: 40px 15px;
+    }
+  
+    .hero h1 {
+      font-size: 28px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 900px) {
+    .category-item {
+      flex: 0 0 50%;
+      padding: 0 10px;
+    }
+  
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .footer-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
